@@ -350,3 +350,145 @@ img, svg, picture, .portrait, .img, .layer, .side {
 [data-scroll], [data-url], .contact-link {
   cursor: pointer !important;
 }
+
+/* GraphicHunter Card Real Image */
+.img.g1 {
+  background: url("assets/journey/received_1876185912873157.jpeg") center/cover no-repeat !important;
+}
+
+/* Andy Hard Card Real Image */
+
+.img.g2 {
+  background: url("assets/journey/received_807568121454149.jpeg") center/cover no-repeat !important;
+}
+
+/* Avivo Card Real Image */
+.img.g3 {
+  background: url("assets/journey/received_975089867684190.jpeg") center/cover no-repeat !important;
+}
+
+/* Northwind Card Real Image */
+.img.g4 {
+  background: url("assets/journey/IMG_9221.JPG") center/cover no-repeat !important;
+}
+
+/* Layout Lock para sa About at itim na background nang walang binabago sa hitsura */
+#about,
+section.about {
+  overflow-anchor: none !important;
+  contain: layout paint !important;
+  position: relative !important;
+}
+
+#about h1,
+#about .huge-title,
+.about h1,
+.about .huge-title {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  contain: layout !important;
+}
+
+/* About Section Typing Effect: Zero-Shift Container */
+.about-typewriter-wrap {
+  position: relative !important;
+  font-family: "Times New Roman", Times, serif !important;
+  font-size: clamp(1rem, 1.25vw, 1.2rem) !important;
+  line-height: 1.75 !important;
+  margin: 0 !important;
+}
+
+/* Invisible placeholder na nagrereserba ng eksaktong taas para hindi gumalaw ang layout */
+.typewriter-ghost {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  display: block !important;
+  user-select: none !important;
+  pointer-events: none !important;
+}
+
+/* Dito lilitaw ang mga tinatype na letra */
+.typewriter-visible {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  color: #ededed !important;
+  white-space: pre-wrap !important;
+}
+
+/* Blinking cursor sa dulo ng tina-type */
+.cursor-blink {
+  position: absolute !important;
+  color: #ffffff !important;
+  font-weight: 300 !important;
+  animation: blinkCursor 0.8s infinite !important;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* I-angat ang mga card sa ilalim ng SELECTED JOURNEY */
+.works .track,
+.journey .track,
+.works .grid,
+.journey .grid,
+.works-slider,
+.journey-slider,
+.journey-items,
+.works-items {
+  margin-top: -15px !important;       /* Hilahin paitaas papalapit sa label */
+  padding-bottom: 20px !important;
+}
+
+/* Siguraduhing komportable ang sukat ng mga larawan para litaw pati ilalim */
+.journey .img,
+.works .img,
+.journey-card .img,
+.work-card .img {
+  height: 210px !important;
+  max-height: 27vh !important;
+}
+
+/* I-angat din ang text labels sa ilalim ng bawat larawan */
+.journey .meta,
+.works .meta,
+.journey-card h3,
+.work-card h3 {
+  margin-top: 6px !important;
+}
+
+/* Itago ang E-commerce, Company Profile, at Web App tags/labels */
+[data-category="ecommerce"],
+[data-category="e-commerce"],
+[data-category="company-profile"],
+[data-category="webapp"],
+[data-category="web-app"],
+.tag-ecommerce,
+.tag-company-profile,
+.tag-webapp {
+  display: none !important;
+}
+
+/* Tanggalin ang blinking cursor line */
+.cursor-blink,
+.cursor,
+.typewriter-cursor {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  content: none !important;
+}
+
+/* Gawing clickable ang cursor kahit walang href attribute */
+nav a,
+nav [role="button"],
+nav [data-scroll],
+.navbar a,
+header a {
+  cursor: pointer !important;
+  text-decoration: none !important;
+}

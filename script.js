@@ -259,3 +259,130 @@ document.addEventListener("click", (e) => {
     }
   }
 });
+
+// Typing animation handler para sa About section
+(() => {
+  const fullText = "I am Jhercy, a passionate learner dreaming of becoming a full-stack developer who pairs sharp design with technical depth. My mission is to master the craft of taking an idea from a blank page to reality—learning to build responsive front-ends, dive deep into the back-end, and design interfaces that genuinely feel good to use. Every bug solved and every project built is a step toward creating powerful, modern applications from the ground up.";
+  const typedContainer = document.getElementById("aboutTypedText");
+  const cursor = document.querySelector(".cursor-blink");
+  const aboutSec = document.getElementById("about") || document.querySelector(".about");
+
+  if (!typedContainer || !aboutSec) return;
+
+  let hasStarted = false;
+
+  const startTyping = () => {
+    let index = 0;
+    typedContainer.textContent = "";
+    
+    const typeNextChar = () => {
+      if (index < fullText.length) {
+        typedContainer.textContent += fullText.charAt(index);
+        index++;
+        setTimeout(typeNextChar, 18); // Bilis ng pag-type bawat letra
+      } else {
+        // Kapag natapos na mag-type, alisin nang kusa ang cursor pagkaraan ng 2 segundo
+        setTimeout(() => {
+          if (cursor) cursor.style.display = "none";
+        }, 2000);
+      }
+    };
+
+    typeNextChar();
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !hasStarted) {
+        hasStarted = true;
+        startTyping();
+      }
+    });
+  }, { threshold: 0.35 });
+
+  observer.observe(aboutSec);
+})();
+
+// Safeguard: Kusang tanggalin ang E-commerce, Company Profile, at Web App elements
+document.addEventListener("DOMContentLoaded", () => {
+  const targetWords = ["e-commerce", "ecommerce", "company profile", "web app"];
+  
+  const removeElements = () => {
+    const allEls = document.querySelectorAll("button, a, span, p, li, div, small, h4, h5");
+    allEls.forEach(el => {
+      const txt = el.textContent.trim().toLowerCase();
+      if (targetWords.includes(txt) || targetWords.some(w => txt === w)) {
+        el.remove();
+      }
+    });
+  };
+
+  removeElements();
+  // Patakbuhin din kung dynamic slider/filter
+  setTimeout(removeElements, 300);
+  setTimeout(removeElements, 1000);
+});
+
+// Awtomatikong pahinain ang volume ng lahat ng audio elements sa page
+document.addEventListener("DOMContentLoaded", () => {
+  const setLowVolume = () => {
+    const allAudios = document.querySelectorAll("audio");
+    allAudios.forEach((audio) => {
+      audio.volume = 0.25; // 25% na lakas lang (mahina at komportable sa pandinig)
+    });
+  };
+
+  setLowVolume();
+  
+  // Kung may audio player/toggle na dynamic na nagpe-play
+  document.addEventListener("play", (e) => {
+    if (e.target && e.target.tagName === "AUDIO") {
+      e.target.volume = 0.25;
+    }
+  }, true);
+});
+
+// Smooth scroll handler na hindi nagpapakita ng target URL sa status bar
+document.addEventListener("click", (e) => {
+  const scrollTrigger = e.target.closest("[data-scroll]");
+  if (!scrollTrigger) return;
+
+  e.preventDefault();
+  const targetId = scrollTrigger.getAttribute("data-scroll");
+  const targetElement = document.querySelector(targetId);
+
+  if (targetElement) {
+    targetElement.scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+});
+
+// Navigation click handler nang walang lumalabas na URL status bar
+document.addEventListener("DOMContentLoaded", () => {
+  // Tanggalin ang natitirang href sa anumang navbar o works buttons
+  document.querySelectorAll('a[href*="#works"], a[href*="javascript"]').forEach(link => {
+    link.removeAttribute("href");
+    link.setAttribute("role", "button");
+  });
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest('a, [role="button"], [data-scroll]');
+    if (!btn) return;
+
+    const targetAttr = btn.getAttribute("data-scroll");
+    const textContent = btn.textContent.trim().toLowerCase();
+
+    let targetEl = null;
+    if (targetAttr) {
+      targetEl = document.querySelector(targetAttr);
+    } else if (textContent.includes("journey") || textContent.includes("work")) {
+      targetEl = document.querySelector("#works") || document.querySelector("#journey") || document.querySelector(".works") || document.querySelector(".journey");
+    }
+
+    if (targetEl) {
+      e.preventDefault();
+      targetEl.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});

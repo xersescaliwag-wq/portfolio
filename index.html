@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/avif" href="assets/logo/logo.avif">
+  <link rel="icon" type="image/avif" href="assets/logo/logo.avif">
 </head>
 <body>
 
@@ -19,16 +19,16 @@
       <span></span>
       <span></span>
     </button>
-    <a data-scroll="#top" role="button" tabindex="0" class="brand-text">CODE BY <b>JHERCY</b></a>
+    <a role="button" data-scroll="#top" class="brand-text">CODE BY <b>JHERCY</b></a>
   </div>
   <audio id="bgMusic" src="assets/music/Into You X bye (altare remix) - Ariana Grande (mashup).mp3" loop preload="none"></audio>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="links" id="links">
-    <a data-scroll="#about" role="button" tabindex="0">About</a>
-    <a data-scroll="#works" role="button" tabindex="0">Journey</a>
-    <a data-scroll="#process" role="button" tabindex="0">Process</a>
-    <a data-scroll="#contact" role="button" tabindex="0">Contact</a>
-    <a data-scroll="#contact" role="button" tabindex="0" class="btn">Student</a>
+    <a role="button" data-scroll="#about">About</a>
+    <a role="button" data-scroll="#works">Journey</a>
+    <a role="button" data-scroll="#process">Process</a>
+    <a role="button" data-scroll="#contact">Contact</a>
+    <a role="button" data-scroll="#contact" class="btn">Student</a>
   </div>
 </nav>
 
@@ -53,7 +53,10 @@
   <div class="about-body">
     <div class="arrow">↗</div>
     <div>
-      <p>I am Jhercy, a passionate learner dreaming of becoming a full-stack developer who pairs sharp design with technical depth. My mission is to master the craft of taking an idea from a blank page to reality—learning to build responsive front-ends, dive deep into the back-end, and design interfaces that genuinely feel good to use. Every bug solved and every project built is a step toward creating powerful, modern applications from the ground up.</p>
+      <p class="about-typewriter-wrap">
+  <span class="typewriter-ghost" aria-hidden="true">I am Jhercy, a passionate learner dreaming of becoming a full-stack developer who pairs sharp design with technical depth. My mission is to master the craft of taking an idea from a blank page to reality—learning to build responsive front-ends, dive deep into the back-end, and design interfaces that genuinely feel good to use. Every bug solved and every project built is a step toward creating powerful, modern applications from the ground up.</span>
+  <span id="aboutTypedText" class="typewriter-visible"></span>
+</p>
       <small>Currently studying at Holy Cross College</small>
     </div>
   </div>
@@ -63,23 +66,23 @@
   <span class="count dark">03/05</span>
   <h2 class="title dark">/Journey</h2>
   <p class="lead">I bring genuine curiosity and dedication to every project, always pushing past my comfort zone and raising my own standard for thoughtful design and clean code.</p>
-  <a data-scroll="#contact" role="button" tabindex="0" class="touch">Get in<br>touch</a>
-  <div class="bar"><small>Selected works</small>
+  <a role="button" data-scroll="#contact" class="touch">Get in<br>touch</a>
+  <div class="bar"><small>Selected Journey</small>
     <div><button id="prev" aria-label="Previous">‹</button><button id="next" aria-label="Next">›</button></div>
   </div>
   <div class="cards" id="cards">
     <article class="card"><div class="img g1"></div>
-      <h3>GraphicHunter</h3>
-      <small>Design &amp; development · 2025</small></article>
+      <h3>Friends</h3>
+      <small>10/8/2024</small></article>
     <article class="card low"><div class="img g2"></div>
-      <h3>Andy Hard</h3>
-      <small>Web and strategy · 2025</small></article>
+      <h3>Awarding </h3>
+      <small>01/28/2025</small></article>
     <article class="card"><div class="img g3"></div>
-      <h3>Avivo</h3>
-      <small>Film production · 2024</small></article>
+      <h3>Youth</h3>
+      <small>06/22/2025</small></article>
     <article class="card low"><div class="img g4"></div>
-      <h3>Northwind</h3>
-      <small>E-commerce · 2024</small></article>
+      <h3>Grad Waiting</h3>
+      <small>11/17/2026</small></article>
   </div>
 </section>
 
@@ -98,27 +101,25 @@
   <span class="count">05/05</span>
   <div class="cols">
     <div><h4>Navigate</h4>
-    <a data-scroll="#top" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Home</a>
-    <a data-scroll="#about" role="button" tabindex="0" class="has-tooltip" data-info="Hide">About</a>
-    <a data-scroll="#works" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Journey</a>
-    <a data-scroll="#process" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Process</a>
-    <a data-scroll="#contact" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Contact</a></div>
+    <a role="button" data-scroll="#top" class="has-tooltip" data-info="Top">Home</a>
+    <a role="button" data-scroll="#about" class="has-tooltip" data-info="Hide">About</a>
+    <a role="button" data-scroll="#works" class="has-tooltip" data-info="Hide">Journey</a>
+    <a role="button" data-scroll="#process" class="has-tooltip" data-info="Hide">Process</a>
+    <a role="button" data-scroll="#contact" class="has-tooltip" data-info="Hide">Contact</a></div>
     <div><h4>Services</h4>
-      <a data-url="#" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Landing page</a>
-      <a data-url="#" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Web app</a>
+      <a role="button" class="has-tooltip" data-info="Hide">Landing page</a>
     </div>
     <div><h4>Contact</h4>
-      <span class="contact-link has-tooltip" data-info="@jhercy_code" data-url="https://instagram.com/">Instagram</span>
-      <span class="contact-link has-tooltip" data-info="linkedin.com/in/jhercy" data-url="https://linkedin.com/">LinkedIn</span>
+      <a role="button" class="has-tooltip" data-info="Hide">Facebook</a>
+      <a role="button" class="has-tooltip" data-info="Hide">Instagram</a>
+      <a role="button" class="has-tooltip" data-info="Hide">Github</a>
       <p class="note"><br></p>
     </div>
   </div>
-  <div class="wordmark marquee-wordmark" aria-hidden="true">
+  <div class="wordmark" aria-hidden="true">
     <div class="wordmark-track">
-      <span>JHERCY • </span>
-      <span>JHERCY • </span>
-      <span>JHERCY • </span>
-      <span>JHERCY • </span>
+      <span>JHERCY • JHERCY • JHERCY • JHERCY •&nbsp;</span>
+      <span>JHERCY • JHERCY • JHERCY • JHERCY •&nbsp;</span>
     </div>
   </div>
 </footer>
@@ -126,6 +127,9 @@
 <script src="script.js"></script>
 </body>
 </html>
+
+
+
 
 
 
