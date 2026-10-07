@@ -18,16 +18,16 @@
       <span></span>
       <span></span>
     </button>
-    <a href="#top" class="brand-text">CODE BY <b>JHERCY</b></a>
+    <a data-scroll="#top" role="button" tabindex="0" class="brand-text">CODE BY <b>JHERCY</b></a>
   </div>
   <audio id="bgMusic" src="assets/music/Into You X bye (altare remix) - Ariana Grande (mashup).mp3" loop preload="none"></audio>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
   <div class="links" id="links">
-    <a href="#about">About</a>
-    <a href="#works">Journey</a>
-    <a href="#process">Process</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="btn">Student</a>
+    <a data-scroll="#about" role="button" tabindex="0">About</a>
+    <a data-scroll="#works" role="button" tabindex="0">Journey</a>
+    <a data-scroll="#process" role="button" tabindex="0">Process</a>
+    <a data-scroll="#contact" role="button" tabindex="0">Contact</a>
+    <a data-scroll="#contact" role="button" tabindex="0" class="btn">Student</a>
   </div>
 </nav>
 
@@ -62,7 +62,7 @@
   <span class="count dark">03/05</span>
   <h2 class="title dark">/Journey</h2>
   <p class="lead">I bring genuine curiosity and dedication to every project, always pushing past my comfort zone and raising my own standard for thoughtful design and clean code.</p>
-  <a href="#contact" class="touch">Get in<br>touch</a>
+  <a data-scroll="#contact" role="button" tabindex="0" class="touch">Get in<br>touch</a>
   <div class="bar"><small>Selected works</small>
     <div><button id="prev" aria-label="Previous">‹</button><button id="next" aria-label="Next">›</button></div>
   </div>
@@ -97,30 +97,40 @@
   <span class="count">05/05</span>
   <div class="cols">
     <div><h4>Navigate</h4>
-    <a href="#top" class="has-tooltip" data-info="Hide">Home</a>
-    <a href="#about" class="has-tooltip" data-info="Hide">About</a>
-    <a href="#works" class="has-tooltip" data-info="Hide">Journey</a>
-    <a href="#process" class="has-tooltip" data-info="Hide">Process</a>
-    <a href="#contact" class="has-tooltip" data-info="Hide">Contact</a></div>
+    <a data-scroll="#top" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Home</a>
+    <a data-scroll="#about" role="button" tabindex="0" class="has-tooltip" data-info="Hide">About</a>
+    <a data-scroll="#works" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Journey</a>
+    <a data-scroll="#process" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Process</a>
+    <a data-scroll="#contact" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Contact</a></div>
     <div><h4>Services</h4>
-      <a href="#" class="has-tooltip" data-info="Hide">Landing page</a>
-      <a href="#" class="has-tooltip" data-info="Hide">Company profile</a>
-      <a href="#" class="has-tooltip" data-info="Hide">E-commerce</a>
-      <a href="#" class="has-tooltip" data-info="Hide">Web app</a>
+      <a data-url="#" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Landing page</a>
+      <a data-url="#" role="button" tabindex="0" class="has-tooltip" data-info="Hide">Web app</a>
     </div>
     <div><h4>Contact</h4>
-      <a href="#" class="has-tooltip" data-info="Hide">Facebook</a>
-      <a href="#" class="has-tooltip" data-info="Hide">Instagram</a>
-      <a href="#" class="has-tooltip" data-info="Hide">Github</a>
+      <span class="contact-link has-tooltip" data-info="@jhercy_code" data-url="https://instagram.com/">Instagram</span>
+      <span class="contact-link has-tooltip" data-info="linkedin.com/in/jhercy" data-url="https://linkedin.com/">LinkedIn</span>
       <p class="note"><br></p>
     </div>
   </div>
-  <div class="wordmark" aria-hidden="true"> Jhercy</div>
+  <div class="wordmark marquee-wordmark" aria-hidden="true">
+    <div class="wordmark-track">
+      <span>JHERCY • </span>
+      <span>JHERCY • </span>
+      <span>JHERCY • </span>
+      <span>JHERCY • </span>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
 
 
 

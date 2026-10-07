@@ -247,3 +247,106 @@ footer{padding-bottom:50px}
 
 /* Kapag ni-click ang About, makita pa rin ang marquee sa ibabaw */
 #about{scroll-margin-top:170px}
+
+/* Wordmark Infinite Marquee */
+.wordmark.marquee-wordmark {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 10px 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.wordmark-track {
+  display: inline-flex;
+  width: max-content;
+  animation: wordmark-scroll 18s linear infinite;
+  will-change: transform;
+}
+
+.wordmark-track span {
+  font-family: var(--head);
+  font-size: clamp(5rem, 22vw, 24rem);
+  line-height: 0.85;
+  text-transform: uppercase;
+  padding-right: 0.25em;
+  color: var(--paper); /* O currentColor / #fff */
+}
+
+@keyframes wordmark-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Disable text selection and highlighting */
+*, *::before, *::after {
+  -webkit-user-select: none !important; /* Safari / Chrome */
+  -moz-user-select: none !important;    /* Firefox */
+  -ms-user-select: none !important;     /* IE / Edge */
+  user-select: none !important;         /* Standard */
+}
+
+/* Tanggalin ang kulay ng highlight selection */
+::selection {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+::-moz-selection {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Disable image dragging, selection, and mobile long-press context menu */
+img, svg, picture, .portrait, .img, .layer, .side {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important; /* Pinipigilan ang long-press menu sa mobile/iOS */
+  pointer-events: auto;
+}
+
+/* Proteksyon sa contacts at hover tooltips laban sa copy at drag */
+.cols a,
+.has-tooltip,
+.has-tooltip::after,
+.has-tooltip::before {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+  user-drag: none !important;
+  cursor: pointer;
+}
+
+/* Contact items styling without link preview */
+.contact-link {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: inherit;
+  cursor: pointer;
+  width: fit-content;
+  transition: opacity 0.2s ease;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* Global: Cursor at style para sa elements na walang href */
+[data-scroll], [data-url], .contact-link {
+  cursor: pointer !important;
+}
