@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const setLowVolume = () => {
     const allAudios = document.querySelectorAll("audio");
     allAudios.forEach((audio) => {
-      audio.volume = 0.08; // 25% na lakas lang (mahina at komportable sa pandinig)
+      audio.volume = 0.25; // 25% na lakas lang (mahina at komportable sa pandinig)
     });
   };
 
@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Kung may audio player/toggle na dynamic na nagpe-play
   document.addEventListener("play", (e) => {
     if (e.target && e.target.tagName === "AUDIO") {
-      e.target.volume = 0.08;
+      e.target.volume = 0.25;
     }
   }, true);
 });
@@ -386,25 +386,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-// ===== Compatibility additions =====
-
-// 1) Keyboard access: Tab to reach, Enter or Space to activate
-document.querySelectorAll('[role="button"], .step').forEach(el => {
-  if (el.classList.contains('step')) el.setAttribute('role', 'button');
-  if (!el.hasAttribute('tabindex')) el.tabIndex = 0;
-  el.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
-  });
-});
-
-// 2) Older browsers can't show AVIF: use define.jpg for the Design step instead of a blank panel
-(() => {
-  const layer = document.querySelectorAll('.side .layer')[1];
-  if (!layer) return;
-  const probe = new Image();
-  probe.onerror = () => { layer.style.backgroundImage = 'url("assets/images/define.jpg")'; };
-  probe.src = 'assets/images/design.avif';
-})();
-
-
